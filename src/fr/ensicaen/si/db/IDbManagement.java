@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public interface IDbManagement {
 
-	void connexion(String bdd_path) throws SQLException;
-	void deconnexion() throws SQLException;
+	void connection(String bdd_path) throws SQLException;
+	void disconnection() throws SQLException;
 	ResultSet query(String queryString) throws SQLException;
 }
