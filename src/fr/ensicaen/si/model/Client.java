@@ -36,6 +36,6 @@ public class Client {
 	
 	@Override
 	public String toString() {
-		return new String(id + "\t" + name + "\t" + surname);
+		return new String(id + "\t\t" + name + "\t\t" + surname);
 	}
 }
