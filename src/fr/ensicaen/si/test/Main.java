@@ -27,7 +27,5 @@ public class Main {
 		} catch (SQLException ex) {
 			ex.printStackTrace(System.err);
 		}
-		
 	}
-
 }
