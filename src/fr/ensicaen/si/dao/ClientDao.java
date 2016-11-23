@@ -13,7 +13,7 @@ public class ClientDao implements IClientDao {
 		
 	}
 	
-	public ClientDao getInstance() {
+	public static ClientDao getInstance() {
 		if (instance == null) {
 			instance = new ClientDao();
 		}
@@ -31,27 +31,27 @@ public class ClientDao implements IClientDao {
 
 	@Override
 	public int countClient() {
-		return 0;
+		return delegate.countClient();
 	}
 
 	@Override
 	public List<Client> getClients() {
-		return null;
+		return delegate.getClients();
 	}
 
 	@Override
 	public List<Client> getByName(String name) {
-		return null;
+		return delegate.getByName(name);
 	}
 
 	@Override
 	public List<Client> getByFullname(String surname, String name) {
-		return null;
+		return delegate.getByFullname(surname, name);
 	}
 
 	@Override
 	public Client getById(int id) {
-		return null;
+		return delegate.getById(id);
 	}
 	
 	

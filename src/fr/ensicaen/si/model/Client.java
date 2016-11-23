@@ -33,4 +33,9 @@ public class Client {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
+	
+	@Override
+	public String toString() {
+		return new String(id + "\t" + name + "\t" + surname);
+	}
 }
