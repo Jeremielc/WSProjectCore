@@ -8,7 +8,7 @@ public class MySqlDbManagement extends ADbManagement {
 	
 	@Override
 	public void connection(String bdd_path) throws SQLException {
-		try { //Devra etre sorti dans un autre projet pour que core n'ait pas de dépendance.
+		try { //Devra etre sorti dans un autre projet pour que core n'ait pas de dÃ©pendance.
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (Exception ex) {
 			System.err.println("Driver loading failed " + ex.getMessage());

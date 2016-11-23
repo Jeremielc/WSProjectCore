@@ -1,7 +1,12 @@
 package fr.ensicaen.si.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Client {
 	
+	//@XmlElement(name="id")
 	private int id;
 	private String civility;
 	private String name;
@@ -10,9 +15,24 @@ public class Client {
 	private int zipcode;
 	private String country;
 	
-	
-	public Client() {
+	public Client(){
 		
+	}
+	
+	public Client(int id,String name,String surname) {
+		this.id = id;
+		this.name = name;
+		this.surname = surname;
+	}
+	
+	public Client(int id, String civility, String name,String surname, String address, int zipcode, String country) {
+		this.id = id;
+		this.civility = civility;
+		this.name = name;
+		this.surname = surname;
+		this.address = address;
+		this.zipcode = zipcode;
+		this.country = country;
 	}
 
 	public int getId() {

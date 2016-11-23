@@ -1,5 +1,10 @@
 package fr.ensicaen.si.model;
 
+import java.util.Date;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Operation {
 
 	private int id;
@@ -7,13 +12,24 @@ public class Operation {
 	private String cardNum;
 	private String accountNum;
 	private String date;
-	private int merchantNum;
-	private int gabNum;
-	private int typeOperationNum;
+	private String merchantNum;
+	private String gabNum;
+	private String typeOperationNum;
 	
 
 	public Operation() {
 		
+	}
+	
+	public Operation(int id, String merchantNum,String gabNum,String cardNum,String accountNum,String typeOperationNum, String date,float amount){
+		this.id = id;
+		this.merchantNum = merchantNum;
+		this.gabNum = gabNum;
+		this.cardNum = cardNum;
+		this.accountNum = accountNum;
+		this.typeOperationNum = typeOperationNum;
+		this.date = date;
+		this.amount = amount;
 	}
 
 	public int getId() {
@@ -36,15 +52,15 @@ public class Operation {
 		return date;
 	}
 	
-	public int getGabNum() {
+	public String getGabNum() {
 		return gabNum;
 	}
 	
-	public int getMerchantNum() {
+	public String getMerchantNum() {
 		return merchantNum;
 	}
 	
-	public int getTypeOperationNum() {
+	public String getTypeOperationNum() {
 		return typeOperationNum;
 	}
 	
@@ -68,15 +84,15 @@ public class Operation {
 		this.date = date;
 	}
 	
-	public void setMerchantNum(int merchantNum) {
+	public void setMerchantNum(String merchantNum) {
 		this.merchantNum = merchantNum;
 	}
 	
-	public void setGabNum(int gabNum) {
+	public void setGabNum(String gabNum) {
 		this.gabNum = gabNum;
 	}
 	
-	public void setTypeOperationNum(int typeOperationNum) {
+	public void setTypeOperationNum(String typeOperationNum) {
 		this.typeOperationNum = typeOperationNum;
 	}
 	
