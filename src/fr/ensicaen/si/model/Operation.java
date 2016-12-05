@@ -12,7 +12,7 @@ public class Operation {
 	private IntegerProperty idProperty, operationTypeProperty;
 	private FloatProperty amountProperty;
 	private StringProperty cardNumProperty, accountNumProperty, dateProperty;
-	
+
 	public Operation() {
 		
 	}
