@@ -1,10 +1,14 @@
-package fr.ensicaen.si.dao;
+package fr.ensicaen.si.dao.client;
 
 import java.util.List;
 
 import fr.ensicaen.si.model.Client;
 
 public class RestClientDao extends AClientDao {
+	
+	public RestClientDao() {
+		
+	}
 
 	@Override
 	public int countClient() {

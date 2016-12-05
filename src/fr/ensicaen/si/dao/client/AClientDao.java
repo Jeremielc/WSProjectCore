@@ -1,36 +1,14 @@
-package fr.ensicaen.si.dao;
+package fr.ensicaen.si.dao.client;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.ensicaen.si.db.ADbManagement;
-import fr.ensicaen.si.db.MySqlDbManagement;
 import fr.ensicaen.si.model.Client;
 
-public class DbClientDao extends AClientDao {
-
-	public DbClientDao() {
-		try {
-			ADbManagement dbMan = new MySqlDbManagement();
-			dbMan.connection(MySqlDbManagement.NomBase);
-			ResultSet res = dbMan.query("select * from tabclient");
-			
-			while (res.next()) {
-				Client temp = new Client();
-				temp.setId(res.getInt(1));
-				temp.setName(res.getString(3));
-				temp.setSurname(res.getString(4));
-				clients.add(temp);
-			}
-
-			dbMan.disconnection();
-		} catch (SQLException ex) {
-			ex.printStackTrace(System.err);
-		}
-	}
-
+public abstract class AClientDao implements IClientDao {
+	
+	protected List<Client> clients = new ArrayList<>();
+	
 	@Override
 	public int countClient() {
 		return clients.size();
@@ -75,5 +53,4 @@ public class DbClientDao extends AClientDao {
 		
 		return new Client();
 	}
-
 }

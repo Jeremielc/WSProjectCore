@@ -11,6 +11,12 @@ public class Operation {
 	public Operation() {
 		
 	}
+	
+	@Override
+	public String toString() {
+		String s = id + "\t" + amount + "\t" + cardNum + "\t" + accountNum + "\t" + date;
+		return s;
+	}
 
 	public int getId() {
 		return id;

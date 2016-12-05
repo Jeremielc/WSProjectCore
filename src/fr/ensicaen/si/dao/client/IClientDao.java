@@ -1,4 +1,4 @@
-package fr.ensicaen.si.dao;
+package fr.ensicaen.si.dao.client;
 
 import java.util.List;
 

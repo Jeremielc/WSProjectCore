@@ -9,6 +9,11 @@ public class Client {
 	public Client() {
 		
 	}
+	
+	@Override
+	public String toString() {
+		return new String(id + "\t\t" + surname + "\t\t" + name);
+	}
 
 	public int getId() {
 		return id;
@@ -32,10 +37,5 @@ public class Client {
 
 	public void setSurname(String surname) {
 		this.surname = surname;
-	}
-	
-	@Override
-	public String toString() {
-		return new String(id + "\t\t" + name + "\t\t" + surname);
 	}
 }
