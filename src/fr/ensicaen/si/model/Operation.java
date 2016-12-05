@@ -1,12 +1,17 @@
 package fr.ensicaen.si.model;
 
-public class Operation {
+import javafx.beans.property.FloatProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
-	private int id;
-	private float amount;
-	private String cardNum;
-	private String accountNum;
-	private String date;
+public class Operation {
+	
+	private IntegerProperty idProperty, operationTypeProperty;
+	private FloatProperty amountProperty;
+	private StringProperty cardNumProperty, accountNumProperty, dateProperty;
 	
 	public Operation() {
 		
@@ -14,47 +19,61 @@ public class Operation {
 	
 	@Override
 	public String toString() {
-		String s = id + "\t" + amount + "\t" + cardNum + "\t" + accountNum + "\t" + date;
+		String s = getId() + "\t" + getAmount() + "\t" + getCardNum() + "\t" + getAccountNum() + "\t" + getDate();
 		return s;
 	}
 
 	public int getId() {
-		return id;
+		return idProperty.get();
 	}
 
 	public float getAmount() {
-		return amount;
+		return amountProperty.get();
 	}
 
 	public String getCardNum() {
-		return cardNum;
+		return cardNumProperty.get();
 	}
 
 	public String getAccountNum() {
-		return accountNum;
+		return accountNumProperty.get();
 	}
 
 	public String getDate() {
-		return date;
+		return dateProperty.get();
 	}
-
-	public void setId(int id) {
-		this.id = id;
+	
+	public int getOperationType() {
+		return operationTypeProperty.get();
 	}
-
-	public void setAmount(float amount) {
-		this.amount = amount;
+	
+	public IntegerProperty idProperty(int id) {
+		idProperty = new SimpleIntegerProperty(id);
+        return idProperty;
 	}
-
-	public void setCardNum(String cardNum) {
-		this.cardNum = cardNum;
+	
+	public IntegerProperty operationTypeProperty(int operationType) {
+		operationTypeProperty = new SimpleIntegerProperty(operationType);
+        return operationTypeProperty;
 	}
-
-	public void setAccountNum(String accountNum) {
-		this.accountNum = accountNum;
+	
+	public FloatProperty amountProperty(float amount) {
+		amountProperty = new SimpleFloatProperty(amount);
+		return amountProperty;
 	}
-
-	public void setDate(String date) {
-		this.date = date;
+	
+	public StringProperty cardNumProperty(String cardNum) {
+		cardNumProperty = new SimpleStringProperty(cardNum);
+		return cardNumProperty;
+	}
+	
+	public StringProperty accountNumProperty(String accountNum) {
+		accountNumProperty = new SimpleStringProperty(accountNum);
+		return accountNumProperty;
+	}
+	
+	public StringProperty dateProperty(String date) {
+		dateProperty = new SimpleStringProperty(date);
+		return dateProperty;
 	}
 }

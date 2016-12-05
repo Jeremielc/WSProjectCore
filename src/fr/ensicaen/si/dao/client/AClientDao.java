@@ -23,7 +23,7 @@ public abstract class AClientDao implements IClientDao {
 	public List<Client> getByName(String name) {
 		List<Client> clientByName = new ArrayList<>();
 		for (Client c : clients) {
-			if (c.getName().equals(name)) {
+			if (c.getSurname().equals(name)) {
 				clientByName.add(c);
 			}
 		}
