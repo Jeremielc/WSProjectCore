@@ -22,6 +22,15 @@ public class Operation {
 		date = new SimpleStringProperty();
 	}
 	
+	public Operation(int id, int operationType, float amount, String cardNum, String accountNum, String date) {
+		this.id = new SimpleIntegerProperty(id);
+		this.operationType = new SimpleIntegerProperty(operationType);
+		this.amount = new SimpleFloatProperty(amount);
+		this.cardNum = new SimpleStringProperty(cardNum);
+		this.accountNum = new SimpleStringProperty(accountNum);
+		this.date = new SimpleStringProperty(date);
+	}
+	
 	@Override
 	public String toString() {
 		String s = getId() + "\t" 
