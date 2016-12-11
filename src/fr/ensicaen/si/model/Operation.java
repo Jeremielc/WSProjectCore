@@ -9,71 +9,99 @@ import javafx.beans.property.StringProperty;
 
 public class Operation {
 	
-	private IntegerProperty idProperty, operationTypeProperty;
-	private FloatProperty amountProperty;
-	private StringProperty cardNumProperty, accountNumProperty, dateProperty;
+	private final IntegerProperty id, operationType;
+	private final FloatProperty amount;
+	private final StringProperty cardNum, accountNum, date;
 
 	public Operation() {
-		
+		id = new SimpleIntegerProperty();
+		operationType = new SimpleIntegerProperty();
+		amount = new SimpleFloatProperty();
+		cardNum = new SimpleStringProperty();
+		accountNum = new SimpleStringProperty();
+		date = new SimpleStringProperty();
 	}
 	
 	@Override
 	public String toString() {
-		String s = getId() + "\t" + getAmount() + "\t" + getCardNum() + "\t" + getAccountNum() + "\t" + getDate();
+		String s = getId() + "\t" 
+				+ getOperationType() + "\t" 
+				+ getAmount() + "\t" 
+				+ getCardNum() + "\t" 
+				+ getAccountNum() + "\t" 
+				+ getDate();
 		return s;
 	}
 
+	public IntegerProperty id() {
+		return id;
+	}
+
+	public IntegerProperty operationType() {
+		return operationType;
+	}
+
+	public FloatProperty amount() {
+		return amount;
+	}
+
+	public StringProperty cardNum() {
+		return cardNum;
+	}
+
+	public StringProperty accountNum() {
+		return accountNum;
+	}
+
+	public StringProperty date() {
+		return date;
+	}
+	
 	public int getId() {
-		return idProperty.get();
-	}
-
-	public float getAmount() {
-		return amountProperty.get();
-	}
-
-	public String getCardNum() {
-		return cardNumProperty.get();
-	}
-
-	public String getAccountNum() {
-		return accountNumProperty.get();
-	}
-
-	public String getDate() {
-		return dateProperty.get();
+		return this.id.get();
 	}
 	
 	public int getOperationType() {
-		return operationTypeProperty.get();
+		return this.operationType.get();
 	}
 	
-	public IntegerProperty idProperty(int id) {
-		idProperty = new SimpleIntegerProperty(id);
-        return idProperty;
+	public float getAmount() {
+		return this.amount.get();
 	}
 	
-	public IntegerProperty operationTypeProperty(int operationType) {
-		operationTypeProperty = new SimpleIntegerProperty(operationType);
-        return operationTypeProperty;
+	public String getCardNum() {
+		return this.cardNum.get();
 	}
 	
-	public FloatProperty amountProperty(float amount) {
-		amountProperty = new SimpleFloatProperty(amount);
-		return amountProperty;
+	public String getAccountNum() {
+		return this.accountNum.get();
 	}
 	
-	public StringProperty cardNumProperty(String cardNum) {
-		cardNumProperty = new SimpleStringProperty(cardNum);
-		return cardNumProperty;
+	public String getDate() {
+		return this.date.get();
 	}
 	
-	public StringProperty accountNumProperty(String accountNum) {
-		accountNumProperty = new SimpleStringProperty(accountNum);
-		return accountNumProperty;
+	public void setId(int id) {
+		this.id.set(id);
 	}
 	
-	public StringProperty dateProperty(String date) {
-		dateProperty = new SimpleStringProperty(date);
-		return dateProperty;
+	public void setOperationType(int operationtype) {
+		this.operationType.set(operationtype);
+	}
+	
+	public void setAmount(float amount) {
+		this.amount.set(amount);
+	}
+	
+	public void setCardNum(String cardNum) {
+		this.cardNum.set(cardNum);
+	}
+	
+	public void setAccountNum(String accountNum) {
+		this.accountNum.set(accountNum);
+	}
+	
+	public void setDate(String date) {
+		this.date.set(date);
 	}
 }

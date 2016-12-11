@@ -11,7 +11,7 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return new String(id + "\t\t" + surname + "\t\t" + name);
+		return new String(id + " - " + surname + " " + name);
 
 	}
 
