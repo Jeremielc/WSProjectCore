@@ -1,5 +1,8 @@
 package fr.ensicaen.si.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Client {
 
 	private String address, civility, country, name, surname;
